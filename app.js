@@ -1,9 +1,8 @@
-import express from "express";
-import morgan from "morgan";
-import cors from "cors";
-import { requestMiddleware } from "./middleware/request-log-middleware.js";
-import { userRouter } from "./router/kakao.js";
-// import passport from "passport";
+const express = require("express");
+const morgan = require("morgan");
+const cors = require("cors");
+const requestMiddleware = require("./middleware/request-log-middleware");
+const userRouter = require("./router/kakao")
 
 const app = express();
 const port = 3000;
@@ -20,7 +19,7 @@ app.use(cors(corsOption));
 
 app.get('/', (req, res) => {
     res.send('Hello World');
-})
+});
 
 app.get('/auth', userRouter);
 

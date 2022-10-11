@@ -1,6 +1,5 @@
-import passport from "passport";
-import KakaoStrategy from "passport-kakao";
-
+const passport = require("passport");
+const KakaoStrategy = require("passport-kakao");
 require("dotenv").config();
 
 new KakaoStrategy({
